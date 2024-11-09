@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Monthly_Expense__c</fullName>
+    <formula>IF(
+TEXT(Expense_Frequency__c) = &quot;One-Time&quot;,
+IF(
+MONTH(TODAY()) = MONTH(Expense_Date__c) &amp;&amp; YEAR(TODAY()) = YEAR(Expense_Date__c),
+Expense_Amount__c,
+0
+),
+CASE(
+TEXT(Expense_Frequency__c),
+&quot;Monthly&quot;, Expense_Amount__c,
+&quot;Quarterly&quot;, Expense_Amount__c / 3,
+&quot;Bi annually&quot;, Expense_Amount__c / 6,
+&quot;Yearly&quot;, Expense_Amount__c / 12,
+0
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Monthly Expense</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>
