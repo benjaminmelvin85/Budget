@@ -1,2 +1,1 @@
-# Budget
-# Budget
+This is a budget app, it is a made up primarily of LWC's. It provides a custom user interface that allows users to enter in there expenses and different sources of income. It generates a monthly and yearly projection based off of your inputs and also allows you to customize each month individually to keep track of your budget
