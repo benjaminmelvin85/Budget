@@ -1,7 +1,7 @@
 import { LightningElement, api } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
-export default class BudgetRecordModal extends LightningElement {
+export default class RecordModal extends LightningElement {
     @api showModal = false;
     @api modalTitle;
     @api objectApiName;
@@ -15,9 +15,7 @@ export default class BudgetRecordModal extends LightningElement {
     get isRecurringExpense() {
         return this.modalType === 'RecurringExpense';
     }
-    get isChecking() {
-        return this.modalType === 'isChecking';
-    }
+
     handleCloseModal() {
         const closeEvent = new CustomEvent('closemodal');
         this.dispatchEvent(closeEvent);

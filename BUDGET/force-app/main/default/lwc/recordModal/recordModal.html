@@ -12,16 +12,9 @@
             <div class="slds-modal__content slds-p-around_medium">
                 <lightning-record-edit-form object-api-name={objectApiName} onsuccess={handleSuccess} onerror={handleError}>
                     <lightning-messages></lightning-messages>
-                    <!-- Fields specific to checking, savings, 401K Source -->
-                    <template if:true={isChecking}>
-                        <lightning-input-field field-name="Account_Name__c"></lightning-input-field>
-                        <lightning-input-field field-name="Account_Type__c"></lightning-input-field>
-                        <lightning-input-field field-name="Balance__c"></lightning-input-field>
-                        <lightning-input-field field-name="Monthly_Contribution__c"></lightning-input-field>
-                        <lightning-input-field field-name="Interest_Rate__c"></lightning-input-field>
-                        
 
-                    </template>
+                    <!-- Common Fields for both forms -->
+                    <lightning-input-field field-name="User__c"></lightning-input-field>
 
                     <!-- Fields specific to Income Source -->
                     <template if:true={isIncomeSource}>
@@ -39,8 +32,7 @@
                         <lightning-input-field field-name="Expense_Frequency__c"></lightning-input-field>
                         <lightning-input-field field-name="Expense_Date__c"></lightning-input-field>
                     </template>
-                    <!-- Common Fields for both forms -->
-                    <lightning-input-field field-name="User__c"></lightning-input-field>
+
                     <lightning-button type="submit" label="Save" variant="brand"></lightning-button>
                 </lightning-record-edit-form>
             </div>
