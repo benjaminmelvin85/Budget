@@ -88,7 +88,7 @@ export default class SavingsImpactComponent extends LightningElement {
                 console.log(typeof(record.Balance__c))
                 this.totalBalance += record.Balance__c
                 this.monthlyContributions += record.Monthly_Contribution__c
-                
+                this.interestRates += record.Interest_Rate__c
             })
         }
         if (value === '401K'){
@@ -102,6 +102,7 @@ export default class SavingsImpactComponent extends LightningElement {
                 console.log(typeof(record.Balance__c))
                 this.totalBalance += record.Balance__c
                 this.monthlyContributions += record.Monthly_Contribution__c
+                this.interestRates += record.Interest_Rate__c
                 
             })
         }
